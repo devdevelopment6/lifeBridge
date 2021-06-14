@@ -1,0 +1,591 @@
+body{font-size:19px;font-family: 'Lato', sans-serif;font-weight:300;}
+img{max-width:100%;height:auto;}
+ul{padding-left:0;}
+a:hover{text-decoration:none;transition:all .3s ease-in-out;}
+ul.logos li {margin: 10px 0;
+    display: inline-block;
+    vertical-align: bottom;
+}
+ul.logos {
+    text-align: center;
+}
+ul.logos li:last-child{padding-left:50px;}
+.FtrBlueBg{background-color:#2b2a6b;padding:20px;}
+.BlueStrip{background-color:#2b2a6b;padding:5px;margin-bottom:30px;}
+.FtrBlueBg p {
+    color: white;
+	font-size:1.105em;
+    margin-bottom: 0;
+}
+.feildBox form {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.feildBox form input, .feildBox form select {
+    width: 100%;margin-bottom: 10px;
+    border: 1px solid #b1b1b1;
+    height: 43px;
+    padding: 0 5px;
+}
+
+.feildBox {
+    background: url(../img/border.png) no-repeat;
+    background-size: contain;
+    padding: 100px 0;
+    text-align: center;
+    margin: 50px 0 0;
+}
+a.LoginBtn {
+	 border:1px solid #2b2a6b;
+    font-size: 1.421em;
+    display: table;
+    padding: 5px 60px;
+    margin-left: auto;
+	text-transform:uppercase;
+    background: #2b2a6b;
+    color: white;
+	border-radius:5px;
+}
+
+.feildBox .row {
+    margin-left: -7px;
+    margin-right: -7px;
+}
+
+.feildBox [class*="col-"] {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+.feildBox h1 {
+	font-size:2.421em;
+    margin-bottom: 40px;
+}
+a.submtBtn {
+    font-size: 1.211em;
+	border:1px solid #512917;
+    background: #512917;
+    margin:40px 0 0;
+	border-radius:5px;
+    display: inline-block;
+    padding: 5px 90px;
+    color: white;
+}
+.submtBtn:hover, .inquiryBTn:hover,.ApointBTn:hover{background:transparent;color:#512917;}
+.LoginBtn:hover,.AptmntBTn:hover {
+    color: #2b2a6b;
+    background: transparent;
+}
+.Reports {
+    box-shadow: 5px 5px 20px 10px #f2f2f2;
+    width: 80%;
+    margin: 60px auto 0;
+    text-align: center;
+    border-radius: 15px;
+    padding: 50px 0;
+}
+.Reports h2 {
+    font-weight: bold;
+    font-size: 1.895em;
+    margin-bottom: 30px;
+}
+.Reports ul li {
+	padding:0 10px;
+    display: inline-block;
+}
+
+
+.Reports a {
+	margin:5px 0;
+	color:white;
+    display: inline-block;
+    padding: 10px 59px;
+	width:300px;
+	    border-radius: 5px;
+}
+.inquiryBTn {
+	border:1px solid #512917;
+    background: #512917;
+}
+.AptmntBTn{background: #2b2a6b;border:1px solid #2b2a6b;}
+
+.Welnessprgrm p {
+    font-size: 1.474em;
+}
+.Welnessprgrm h1 {
+    line-height: 1.1em;
+    font-size: 2.421em;
+    font-weight: 600;
+}
+.Welnessprgrm {
+    background: #f3d9bb;
+    padding: 80px 65px;
+    
+}
+.contBox{border: 1px solid #d26c04;background: #f3d9bb;}
+.ApointBox{padding: 80px 65px;border-left: 1px solid #d26c04;background:white;}
+.ApointBox h2 {
+    font-size: 1.895em;
+    font-weight: 600;
+}
+ul.radioBtns li {
+    display: inline-block;
+}
+ul.radioBtns li:last-child {
+    padding-left: 50px;
+}
+ul.radioBtns input[type=radio] {
+    height: 20px;
+    width: 20px;
+    color: black;
+    display: inline-block;
+   vertical-align: middle;
+}
+}
+.ApointBox p {
+    font-size: 1.211em;
+}
+
+.ApointBox p a{color:#c44b9a;text-decoration:underline;}
+
+a.ApointBTn {
+    font-size: 1.474em;
+    border: 1px solid #512917;
+    background: #512917;
+	font-weight:300;
+    margin: 40px 0 0;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 5px 40px;
+    color: white;
+}
+.singleHd h3 {
+    font-weight: 600;
+    margin: 70px 0 55px;
+    font-size: 1.526em;
+    color: #512917;
+}
+.shadowBox {
+    background: url(../img/border2.png) no-repeat;
+    background-size: contain;
+	padding:60px;
+}
+.shadowBox1 {
+    background: url(../img/border2.png) no-repeat;
+    background-size: cover;
+	padding:60px;
+}
+.shadowBox ul li, .shadowBox1 ul li {
+    position: relative;
+	font-size:1.158em;
+	margin-bottom:20px;    line-height: 1.4em;
+    list-style: none;
+    padding-left: 40px;
+}
+
+.shadowBox ul li:before, .shadowBox1 ul li:before{position:absolute;content:"";
+background: url(../img/checkmark.png) no-repeat;height:21px;width:30px; left:0; top:7px;}
+
+.shadowBox h3 {
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #2b2a6b;
+}
+.shadowBox1 h3 {
+	font-size:1.632em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #c24596;
+}
+.FtrHeading {
+	margin:0 0 20px;
+	padding:80px 15px 60px;
+    position: relative;
+    background: #2b2a6b;
+    text-align: center;
+}
+.shape {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+	left:0;
+	top:-2px;
+    
+}
+.FtrHeading p{font-size:1.268em; color:white;}
+
+
+.formBox {
+    background: url(../img/border.png) no-repeat;
+    background-size: contain;
+    padding: 100px 35px;
+    
+    margin: 50px 0 0;
+}
+.formBoxinner h1,.formBoxinner2 h1,.formBoxinner p,.formBoxinner1 h1,.formBoxinner1 p{text-align:center;}
+.formBoxinner {
+    width: 50%;
+    margin: 0 auto;
+}
+.Feilds label {display:inline-block;width:35%}
+ul.radioBtns {
+    display: inline-block;
+}
+
+   .Feilds { margin-bottom: 30px;}
+.formBoxinner input[type="text"],.formBoxinner input[type="Date"], .formBoxinner select {
+    width: 62%;position:relative;
+    padding: 5px;min-height: 40px;
+}
+.formBoxinner select:after{}
+a.submtBtn1 {
+    font-size: 1.211em;
+    border: 1px solid #2b2a6b;
+    background: #2b2a6b;
+    margin-left: auto;
+    border-radius: 5px;
+    width: 64%;    text-align: center;
+    display: table;
+    padding: 10px;
+    color: white;
+}
+a.submtBtn1:hover{background:transparent;color:#2b2a6b;}
+.DateRange input[type=text] {
+    max-width: 150px;
+    padding: 5px 15px;    background: transparent;
+    margin: 0 5px 25px;
+	position:relative;border: 1px solid #b1b1b1;
+}
+.DateRange label{margin-right:5px;}
+ h1 {
+    line-height: 1.1em;
+    font-size: 2.421em;
+    font-weight: 600;
+}
+.formBoxinner form {
+    margin-top: 75px;
+}
+.Feildsinline {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.formBox2 {
+    background: url(../img/border.png) no-repeat;
+    background-size: contain;
+    padding: 100px 35px;
+    margin: 50px 0 0;
+}
+.formBoxinner1 {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.Feildsinline select {
+    padding: 8px 10px;
+    border: 1px solid #b1b1b1;
+    margin: 10px 2px;
+}
+.submtBtn2 {
+    background: #512917;
+	border:1px solid #512917;
+    border-radius: 5px;
+    padding: 10px 52px;
+    font-size:1.105em;
+    color: white;
+    margin: 5px;
+    display: inline-block;
+}
+.DateRange {
+    margin-top: 60px;
+}
+.DateRange input[type=text]:after {
+    position: absolute;
+    content: "";
+    background: url(../img/calender.jpg) no-repeat;
+    width: 18px;
+    height: 20px;
+    right: 0;
+    top: 0;
+}
+.ReportTable {
+    margin-top: 40px;
+}
+
+.ReportTable1 {
+    margin-top: 50px;
+}
+
+.ReportTable tr th {
+    font-size: 0.895em;
+    font-weight: 300;
+    padding: 20px 14px;
+    background: #2b2a6b;
+    color: white;
+}
+.ReportTable1 tr th {
+    font-size: 0.895em;
+    font-weight: 300;
+    padding: 20px 0;
+	text-align:center;
+    background: #512917;
+    color: white;
+}
+.ReportTable tr td{background:#e8e8ef;padding:25px;}
+.ReportTable1 tr td{background:#f3d9bb;padding:25px;}
+.ReportTable .table-bordered td, .ReportTable .table-bordered th,.ReportTable1 .table-bordered td, .ReportTable1 .table-bordered th {
+    border: 1px solid white;
+}
+
+ul.downldBtn {
+    margin-top: 20px;
+    display: table;
+    margin-left: auto;
+}
+
+ul.downldBtn li {
+    display: inline-block;
+    padding: 0 5px;
+    vertical-align: middle;
+}
+
+ul.downldBtn li:first-child{font-size:1.211em;}
+
+.csvBtn {
+    background: #512917;
+    border-radius: 5px;
+    padding: 10px 52px;
+     font-size: 1.105em;
+    color: white;
+    margin: 5px;
+	border:1px solid #512917;
+    display: inline-block;
+}
+.pdfBtn {
+    background: #2b2a6b;
+    border-radius: 5px;
+    padding: 10px 52px;
+    font-size: 1.105em;
+    color: white;
+	border:1px solid #2b2a6b;
+    margin: 5px;
+    display: inline-block;
+}
+.pdfBtn:hover{background:transparent;color:#2b2a6b;}
+.csvBtn:hover, .submtBtn2:hover,.submtBtn3:hover{background:transparent;color:#512917;}
+.formBoxinner2 {
+    width: 70%;
+    margin: 0 auto;
+}
+.feildsGrp .row{margin-left:-5px;margin-right:-5px;}
+.feildsGrp [class*="col-"]{padding-left:5px;padding-right:5px;}
+.feildsGrp input[type="text"],.feildsGrp input[type="date"], .feildsGrp select {
+    width: 100%;    min-height: 40px;
+    padding: 8px;font-size:0.947em;
+    margin-bottom: 15px;
+}
+
+
+.submtBtn3 {
+    background: #512917;
+    border: 1px solid #512917;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.105em;
+    color: white;
+    margin: 5px;
+    display: inline-block;
+    text-align: center;
+}
+
+.formBoxinner2 label{font-size:1.050em;}
+.Reports1 {
+    box-shadow: 5px 5px 20px 10px #f2f2f2;
+    
+    margin: 60px auto 0;
+ 
+    border-radius: 15px;
+    padding: 50px 15px;
+}
+
+.formBoxinner2 h1{margin-bottom:50px;}
+.Reports1  ul{display:table;margin:0 auto;}
+
+.Reports1 ul li {
+    width: ;
+    display: inline-block;
+}
+.Reports1 ul li:nth-child(odd){width:70%;}
+.Reports1 h3{font-weight:600;
+margin-bottom:30px;
+	font-size:1.211em;
+text-align: center;}
+.dateBox {
+    position: relative;
+    width: 100%;
+}
+
+.dateBox {
+    position: relative;
+    width: 100%;
+}
+
+.dateBox span{
+    position: absolute;
+    right:12px;
+	top:8px;
+}
+.dateBox2 {
+    display: inline-block;
+    position: relative;
+}
+.dateBox2 span {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+/*MQMQMQMQMQMQMQMMQMQMQMQMQMQMQMQMQMQMQMQMQMQMQMQMQMQMQMMQMQMQMQMQMQMQMQMQMQMQMQMQMQMQMQMQMQMQMMQMQMQMQMQMQMQMQMQMQMQMQMQ*/
+
+@media(max-width:991px){		
+body {
+    font-size: 15px !important;
+}	
+.formBoxinner1{width:100%;}
+.shadowBox,.shadowBox1{
+    background: transparent;
+    padding: 60px 35px;
+    box-shadow: 0px 0px 8px 3px #ccc;
+    margin: 0 0 50px;
+    border-radius: 20px;
+}
+.formBoxinner {
+    width: 100%;
+    margin: 0 auto;
+}
+.formBoxinner2 {
+    width: 95%;
+    margin: 0 auto;
+}
+}
+
+@media(max-width:575px){
+	body {
+    font-size: 14px !important;
+}	
+.DateRange input[type=text] {
+    max-width: 80px;
+    padding: 5px 15px;
+    margin: 0 0px 20px;
+    position: relative;
+    border: 1px solid #b1b1b1;
+}
+.Feildsinline select{min-width:120px;}
+	.Welnessprgrm,.ApointBox {
+    
+    padding: 45px 25px;
+}
+	.shape{display:none;}
+	.Reports{width:100%;}
+	.feildBox form{width:80%;}
+	.Reports a{width:auto;}
+	.contBox {
+    margin-top: 50px;
+}
+
+.shadowBox,.shadowBox1{
+    background: transparent;
+    padding: 60px 35px;
+    box-shadow: 0px 0px 8px 3px #ccc;
+    margin: 0 0 50px;
+    border-radius: 20px;
+}
+.Feilds label {
+    display: inline-block;
+    width: 100%;
+}
+
+.formBoxinner input[type="text"], .formBoxinner input[type="Date"], .formBoxinner select {
+    width: 100%;
+    position: relative;
+    padding: 5px;
+    min-height: 40px;
+}
+a.submtBtn1{margin-right:auto;}
+.formBox2 {
+    background: url(../img/border.png) no-repeat;
+    background-size: contain;
+    padding: 60px 15px;
+    margin: 50px 0 0;
+}
+.formBoxinner2 {
+    width: 90%;
+    margin: 0 auto;
+}
+.pdfBtn,.csvBtn {
+
+    padding: 10px 20px;
+   
+}
+}
+
+
+@media(max-width:1199px){
+		
+	ul.logos li{width:49%;}
+}
+
+
+@media(min-width:1230px){
+		.container {
+    width:1200px;}
+}
+/******************************************for sticky header*************************************************************/
+
+
+.txt-center{text-align:center}
+
+.feildBoxBgcover {
+   background: url(../img/border.png) no-repeat;
+   background-size: cover;
+   padding: 200px 0;
+   text-align: center;
+   margin: 50px 0 0;
+}
+
+.FeildsSize form {
+   width: 70%;
+   margin: 0 auto;
+}
+.feildBoxBgcover1 {
+   background: url(../img/border.png) no-repeat;
+   background-size: cover;
+   padding: 100px 0;
+   text-align: center;
+   margin: 50px 0 0;
+}
+.FeildsSize form {
+   width: 400px;
+   margin: 40px auto 0;
+}
+.FeildsSize form input, .FeildsSize form select {
+   width: 100%;
+   margin-bottom: 10px;
+   border: 1px solid #b1b1b1;
+   height: 43px;
+   padding: 0 5px;
+}
+@media(max-width:767px){
+.feildBoxBgcover{background-size:contain;}
+}
+
+@media(max-width:575px){
+
+.FeildsSize form {
+   width: 250px;
+   margin: 40px auto 0;
+}
+}
+
+@media(max-width:1199px){
+.feildBoxBgcover1{background-size:contain;}} 

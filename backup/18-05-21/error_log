@@ -1,0 +1,1 @@
+[12-May-2021 16:57:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home1/devdevel/public_html/lifebridge/wp-content/themes/Lifebridge/ajax-getPatientDataBYId.php on line 36
