@@ -113,13 +113,15 @@ if($_REQUEST['actions']=="submitAppointment"){
       
       <div class="formBoxinner">        
         <h1><?php the_title();?></h1>
-        <p>User B will create a New Record for the Patient and will generate the
-    Unique ID for the Patient.</p>
+        <p><!-- User B will create a New Record for the Patient and will generate the
+    Unique ID for the Patient -->
+        Upon creation of an appointment for a new patient, the system will generate a Unique ID for the Patient.  Please make note of this patient ID on the confirmation screen for your records (it will be needed for booking future appointments for this patient)
+        </p>
         <form method="post" id="appointmentForm">
         <div class="Feilds"><label>New Patient</label>
           <ul class="radioBtns">
               <li><input type="radio" name="newPatient" id="newPatient" value="yes" onchange="funNewPatient()" checked="" >
-              <span>yes</span></li>
+              <span>Yes</span></li>
               <li><input type="radio"  name="newPatient" id="noNewPatient" value="no" onchange="funOldPatient()" class="selected">
               <span>No</span></li>
           </ul>
@@ -128,8 +130,9 @@ if($_REQUEST['actions']=="submitAppointment"){
         <div class="Feilds" id="divmcmsId" style="display: block;">
           <label id="doctor"></label>
           <input type="checkbox" name="yes" id="mcmsChecked"  onclick="enableAllFieldWithMCMS()">
-          If Doctor Membership Verified with MCMS?
-                         <strong><a href="http://mclennancountymedicine.org/find-a-doctor" target="_blank">Click to Find a Doctor here</a></strong>
+          Has MCMS membership been verified? <strong><a href="http://mclennancountymedicine.org/find-a-doctor" target="_blank">Click Here to Verify</a></strong>
+
+                         
                     
         </div>
 

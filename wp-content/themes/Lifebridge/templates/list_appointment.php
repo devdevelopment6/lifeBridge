@@ -2,20 +2,10 @@
 /* Template Name: List Appointment
 */ 
 get_header(); 
-date_default_timezone_set("America/Chicago"); 
 
-if(!is_user_logged_in()){
- echo '<script type="text/javascript">window.location.href = "login/"</script>';
-}
- 
   
   if($_REQUEST['appointmentStartDate']!=""){
   global $wpdb;  
-
-
-  $inqueryFromDate=date('Y-m-d',strtotime($_REQUEST['appointmentStartDate']));
-   $inqueryToDate=date('Y-m-d',strtotime($_REQUEST['appointmentToDate']));
-
 
   $cond = [];
     if(!empty($_REQUEST['specialty']))
@@ -56,15 +46,15 @@ if(!is_user_logged_in()){
 
  /* echo " Select * from " . $wpdb->prefix . "appointment where datetime >=  '".$_REQUEST['appointmentStartDate']."' AND datetime <='".date('Y-m-d H:i:s', strtotime($_REQUEST['appointmentToDate'] . ' +1 day'))."' ".$condtion."  ORDER BY id DESC ";*/
 
-    $appointment = $wpdb->get_results(" Select * from " . $wpdb->prefix . "appointment where datetime >=  '".$inqueryFromDate."' AND datetime <='".date('Y-m-d H:i:s', strtotime($inqueryToDate . ' +1 day'))."' ".$condtion."  ORDER BY id DESC limit 0,6000");
+    $appointment = $wpdb->get_results(" Select * from " . $wpdb->prefix . "appointment where datetime >=  '".$_REQUEST['appointmentStartDate']."' AND datetime <='".date('Y-m-d H:i:s', strtotime($_REQUEST['appointmentToDate'] . ' +1 day'))."' ".$condtion."  ORDER BY id DESC limit 0,6000");
     $totalGrand = $wpdb->num_rows; 
 
-    $appointmentmcms = $wpdb->get_results(" Select * from " . $wpdb->prefix . "appointment where  datetime >=  '".$inqueryFromDate."' AND datetime <='".date('Y-m-d H:i:s', strtotime($inqueryToDate . ' +1 day'))."' ".$condtion."  and billable='1'  ORDER BY id DESC ");
+    $appointmentmcms = $wpdb->get_results(" Select * from " . $wpdb->prefix . "appointment where datetime >=  '".$_REQUEST['appointmentStartDate']."' AND datetime <='".date('Y-m-d H:i:s', strtotime($_REQUEST['appointmentToDate'] . ' +1 day'))."' ".$condtion."  and billable='1'  ORDER BY id DESC ");
     $totalMcms = $wpdb->num_rows; 
 
 
 
-    $appointmentSelf = $wpdb->get_results(" Select * from " . $wpdb->prefix . "appointment where  datetime >=  '".$inqueryFromDate."' AND datetime <='".date('Y-m-d H:i:s', strtotime($inqueryToDate . ' +1 day'))."' ".$condtion."  and billable='2' ");
+    $appointmentSelf = $wpdb->get_results(" Select * from " . $wpdb->prefix . "appointment where datetime >=  '".$_REQUEST['appointmentStartDate']."' AND datetime <='".date('Y-m-d H:i:s', strtotime($_REQUEST['appointmentToDate'] . ' +1 day'))."' ".$condtion."  and billable='2' ");
     $totalSelf = $wpdb->num_rows;
 
   }else{
@@ -87,37 +77,37 @@ if(!is_user_logged_in()){
 
   if(!empty($_REQUEST['appointmentStartDate'])){
   $inqueryDate=$_REQUEST['appointmentStartDate'];
+  }else{
+  $inqueryDate=date('Y-m-d');
   }
 
   if(!empty($_REQUEST['appointmentToDate'])){
   $inqueryDates=$_REQUEST['appointmentToDate'];
+  }else{
+  $inqueryDates=date('Y-m-d');
   }
+
 
 ?>
 
-<style type="text/css">
-  .error {
-    color: red;
-}
 
-</style>
 <section class="innerSec">  
   <div class="container">
     <div class="formBox2">
     
       <div class="formBoxinner1">
     <h1>List of Appointments</h1>
-      <form  method="post" id="appointmentForm">
+      <form  method="post">
         <div class="DateRange">
           <label>Date Range</label>
             <div class="dateBox2">
              
-              <input type="text" name="appointmentStartDate" id="appointmentStartDate" placeholder="From Date *" value="<?php echo $inqueryDate;?>" required="" class="textbox-n datepickerFrom required" readonly required >
+              <input type="date" name="appointmentStartDate" id="appointmentStartDate" placeholder="Date *" value="<?php echo $inqueryDate;?>" required="" class="textbox-n"  >
             </div>
 
             <div class="dateBox2">
              
-              <input type="text" name="appointmentToDate" id="appointmentToDate" class="textbox-n datepickerTo required" placeholder="To Date *" required="" value="<?php echo  $inqueryDates;?>" readonly   required>
+              <input type="date" name="appointmentToDate" id="appointmentToDate" class="textbox-n" value="<?php echo  $inqueryDates;?>" >
             </div>
         </div>
 
@@ -160,7 +150,7 @@ if(!is_user_logged_in()){
               $appointmentTypelabel = $appointmentType['choices'];
             ?>
               <select name="appointmentType"  >
-                 <option value="">--App Type--</option>
+                 <option value="">--Appointment Type--</option>
                   <?php
                    foreach( $appointmentTypelabel as $t => $w ) { ?>
                          <option value="<?php echo $t;?>" <?php if($t==$_REQUEST['appointmentType']){ echo 'selected=selected';}?> ><?php echo $w; ?></option>
@@ -174,7 +164,7 @@ if(!is_user_logged_in()){
               $employmentstatuslabel = $employmentstatus['choices'];
            ?>
              <select name="employmentstatus"  >
-              <option value="">--Empl Status--</option>
+              <option value="">--Employment Status--</option>
              <?php
                  foreach( $employmentstatuslabel as $t => $w ) { ?>
                      <option value="<?php echo $t;?>" <?php if($t==$_REQUEST['employmentstatus']){ echo 'selected=selected';}?> ><?php echo $w; ?></option>
@@ -184,7 +174,7 @@ if(!is_user_logged_in()){
 
         <div class="Feildsinline">
           <select name="billable"  >
-              <option value="">--Billable--</option>                         
+              <option value="">--Select--</option>                         
               <option value="2"  <?php if($_REQUEST['billable']=='2'){ echo 'selected=selected';}?> >Self Pay</option>                         
               <option value="1"  <?php if($_REQUEST['billable']=='1'){ echo 'selected=selected';}?> >MCMS Pay</option> 
           </select>
@@ -208,14 +198,6 @@ if(!is_user_logged_in()){
       <div class="table-responsive">          
       <table class="table-bordered" id="inquiryTabel_id">
         <thead>
-          <tr style="display: none;">
-                <th colspan="10">
-                  Search Date : <?php echo $inqueryFromDate. ' : ' . $inqueryToDate;?>                     
-                      MCMS Pay : <?php echo $totalMcms;?> 
-                      Self Pay : <?php echo $totalSelf;?>
-                </th>                
-            </tr>
-
             <tr>
                 <th>S.N</th>
                 <th>PatientID</th>
@@ -254,7 +236,7 @@ if(!is_user_logged_in()){
               <tr>
                   <td><?php echo $i;?></td>
                   <td><?php echo $getVal->patientId;?></td>
-                  <td><?php echo date('m-d-Y',strtotime($getVal->dateOfSession));?></td>
+                  <td><?php echo date('d M Y',strtotime($getVal->dateOfSession));?></td>
                   <td><?php echo $gen;?></td>
                   <td><?php echo $getVal->age;?></td>
                   <td><?php echo $getVal->specialty;?></td>
@@ -303,103 +285,16 @@ if(!is_user_logged_in()){
  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script> 
 
 
-
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
- <script type="text/javascript">
-   
-  $("#appointmentForm").validate({
-  submitHandler: function(form) {
-    form.submit();
-  }
- });
- </script>
-<script type="text/javascript">
-  $(document).ready(function () {
-        var today = new Date();
-        $('.datepickerFrom').datepicker({
-            format: 'yyyy-m-d',
-            autoclose:true,
-           /* endDate: "today",
-            maxDate: today*/
-        }).on('changeDate', function (ev) {
-                $(this).datepicker('hide');
-            });
-
-
-        $('.datepickerFrom').keyup(function () {
-            if (this.value.match(/[^0-9]/g)) {
-                this.value = this.value.replace(/[^0-9^-]/g, '');
-            }
-        });
-    }); 
-
-  $(document).ready(function () {
-        var today = new Date();
-        $('.datepickerTo').datepicker({
-            format: 'yyyy-m-d',
-            autoclose:true,
-           /* endDate: "today",
-            maxDate: today*/
-        }).on('changeDate', function (ev) {
-                $(this).datepicker('hide');
-            });
-
-
-        $('.datepickerTo').keyup(function () {
-            if (this.value.match(/[^0-9]/g)) {
-                this.value = this.value.replace(/[^0-9^-]/g, '');
-            }
-        });
-    });
-</script>
-
-
 <?php if($_REQUEST['appointmentStartDate']!="" && $_REQUEST['appointmentToDate']!=""){ ?>
 <script type="text/javascript">
   
- $(document).ready( function () {
+  $(document).ready( function () {
     $('#inquiryTabel_id').DataTable({
       dom: 'Bfrtip',
-      "searching": false ,     
+      "searching": false , 
         buttons: [
-       {
-          extend: 'csv',
-          "download": "download"
-        } ,
-        {
-          extend: 'pdfHtml5',
-          text: 'PDF',
-         pageSize: 'A4',
-
-          customize: function(pdfDocument) {
-
-            pdfDocument.content[1].table.headerRows = 2;
-            var firstHeaderRow = [];
-            $('#inquiryTabel_id').find("thead>tr:first-child>th").each(
-              function(index, element) {
-                var colSpan = element.getAttribute("colSpan");
-                firstHeaderRow.push({
-                  text: element.innerHTML,
-                  style: " width:100%",                 
-                  colSpan: colSpan
-                });
-                for (var i = 0; i < colSpan - 1; i++) {
-                  firstHeaderRow.push({});
-                }
-              });
-            pdfDocument.content[1].table.body.unshift(firstHeaderRow);
-
-
-
-          }
-        }
-
-      ]
-
+            'csv', 'pdf'
+        ]
     });
 } );
 </script>
@@ -410,13 +305,12 @@ $(document).ready(function(){
   $('#inquiryTabel_id').DataTable({
       'processing': true,
       'serverSide': true,
+      "searching": false , 
       "dom": 'Bfrtip',
-      "searching": false ,  
       'serverMethod': 'post',
       buttons: [
             'csv', 'pdf'
         ],
-      "order": [[ 0, 'desc' ]],  
       'ajax': {
           'url':'<?php echo get_template_directory_uri() ?>/ajax-DataTableListAppointment.php',          
       },

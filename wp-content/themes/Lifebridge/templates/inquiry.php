@@ -134,7 +134,8 @@ $(document).ready(function () {
         var today = new Date();
         $('.datepicker').datepicker({
             format: 'yyyy-m-d',
-            minDate : 0,
+            //minDate : 0,
+            maxDate : 0,
             autoclose:true,
         }).on('changeDate', function (ev) {
                 $(this).datepicker('hide');

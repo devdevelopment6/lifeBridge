@@ -65,9 +65,16 @@ foreach ($empQuery as $key => $getVal) {
         $gen="Female";
     }
 
+    if($getVal->visitNumber=='0'){
+        $visitNumber="1";
+        }else{
+        $visitNumber=$getVal->visitNumber;
+    }
+
     $data[] = array(
         "id"=>$getVal->id,
         "patientId"=>$getVal->patientId,
+        "visitNumber"=>$visitNumber,
         "dateOfSession"=>date('m-d-Y',strtotime($getVal->dateOfSession)),
         "gender"=>$gen,
         "age"=>$getVal->age,

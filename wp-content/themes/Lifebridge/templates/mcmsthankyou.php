@@ -28,7 +28,7 @@ $getId= base64_decode($_REQUEST['id']);
 <!-- -----------------------------------------------   ----------------------------------------------- -->
     <div class="feildBoxBgcover">
     <h1> Thank You</h1>
-    <p>Thank you for your interest. We will contact you shortly!</p>
+    <p>Please call Waco Psychological Associates at (254) 751-1550.<br>  Ask for Joanne and let her know you are an MCMS member requesting a LifeBridge appointment!</p>
     
   </div>
 </div>
